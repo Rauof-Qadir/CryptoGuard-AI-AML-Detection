@@ -21,6 +21,15 @@ CryptoGuard AI aims to identify suspicious transaction patterns using:
 - Graph Network Intelligence
 - Explainable Risk Scoring
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange)
+![Anomaly Detection](https://img.shields.io/badge/Detection-Isolation%20Forest-red)
+![Graph Analytics](https://img.shields.io/badge/Graph-NetworkX-green)
+![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit-ff4b4b)
+![Dataset](https://img.shields.io/badge/Dataset-Elliptic%20Bitcoin-purple)
+![Status](https://img.shields.io/badge/Project-Completed-success)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 
 ---
 
@@ -28,7 +37,7 @@ CryptoGuard AI aims to identify suspicious transaction patterns using:
  ![Dashboard View](docs/screenshots/dashboard2.png)
  ![Dashboard View](docs/screenshots/dashboard3.png)
  ![Dashboard View](docs/screenshots/dashboard4.png)
- 
+
 # System Architecture
 
 Bitcoin Transactions
