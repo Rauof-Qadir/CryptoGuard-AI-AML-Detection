@@ -1,158 +1,319 @@
-\
+# 🛡️ CryptoGuard AI
 
-```markdown
-# 🛡️ CryptoGuard AI | Anti-Money Laundering (AML) Detection Engine
+## Crypto Fraud & Anti-Money Laundering (AML) Detection Engine
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange) ![Anomaly Detection](https://img.shields.io/badge/Detection-Isolation%20Forest-red) ![Graph Analytics](https://img.shields.io/badge/Graph-NetworkX-green) ![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit-ff4b4b) ![Dataset](https://img.shields.io/badge/Dataset-Elliptic%20Bitcoin-purple) ![Status](https://img.shields.io/badge/Project-Completed-success) ![License](https://img.shields.io/badge/License-MIT-yellow)
-
-## 📌 Overview
-**CryptoGuard AI** is an end-to-end Machine Learning-based cryptocurrency fraud and Anti-Money Laundering (AML) detection system. Designed to mirror real-world financial monitoring architectures used by exchanges, the platform analyzes Bitcoin transaction behaviors, detects anomalies, generates risk scores, and provides explainable alerts via an interactive investigation dashboard.
-
-Cryptocurrency transactions are fast, decentralized, and difficult to monitor manually. CryptoGuard AI addresses this by identifying suspicious transaction patterns using a combination of **Machine Learning, Behavioral Analytics,** and **Graph Network Intelligence**.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange)
+![Anomaly Detection](https://img.shields.io/badge/Detection-Isolation%20Forest-red)
+![Graph Analytics](https://img.shields.io/badge/Graph-NetworkX-green)
+![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit-ff4b4b)
+![Dataset](https://img.shields.io/badge/Dataset-Elliptic%20Bitcoin-purple)
+![Status](https://img.shields.io/badge/Project-Completed-success)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
-## 🏗️ System Architecture
+## Overview
 
-```mermaid
-graph TD;
-    A[Bitcoin Transactions] --> B[Data Processing];
-    B --> C[Feature Engineering];
-    
-    C --> D[Isolation Forest <br> Anomaly Detection];
-    C --> E[Random Forest <br> Fraud Classification];
-    C --> F[Graph Network Analysis];
-    
-    D --> G[Risk Fusion Engine];
-    E --> G;
-    F --> G;
-    
-    G --> H[Explainable AML Alerts];
-    H --> I[Investigation Dashboard];
+CryptoGuard AI is an end-to-end Machine Learning based cryptocurrency fraud and Anti-Money Laundering (AML) detection system.
 
+The project analyzes Bitcoin transaction behavior, detects suspicious activities, generates risk scores, explains why transactions are flagged, and provides an investigation dashboard similar to real-world financial monitoring systems used by exchanges and financial institutions.
+
+---
+
+## Project Objective
+
+Cryptocurrency transactions are fast, decentralized, and difficult to monitor manually.
+
+CryptoGuard AI aims to identify suspicious transaction patterns using:
+
+- Machine Learning
+- Anomaly Detection
+- Behavioral Analytics
+- Graph Network Intelligence
+- Explainable Risk Scoring
+
+---
+
+![Dashboard View](docs/screenshots/dashboard1.png)
+![Dashboard View](docs/screenshots/dashboard2.png)
+![Dashboard View](docs/screenshots/dashboard3.png)
+![Dashboard View](docs/screenshots/dashboard4.png)
+
+---
+
+## System Architecture
+
+```
+Bitcoin Transactions
+        ↓
+Data Processing
+        ↓
+Feature Engineering
+        ↓
+┌───────────────────────┐
+│                       │
+↓                       ↓
+Isolation Forest        Random Forest
+Anomaly Detection       Fraud Classification
+│                       │
+└──────────┬────────────┘
+           ↓
+Graph Network Analysis
+           ↓
+Risk Fusion Engine
+           ↓
+Explainable AML Alerts
+           ↓
+Investigation Dashboard
 ```
 
 ---
 
-## ✨ Core Features
+## Key Features
 
-### 1. Data Processing & Behavioral Feature Engineering
+### 1. Data Processing Pipeline
 
-The pipeline ingests real-world Bitcoin transaction data, cleans features, and handles extreme class imbalances. It extracts critical behavioral signals to identify abnormal financial activity:
+- Loads real-world Bitcoin transaction data
+- Cleans and prepares transaction features
+- Handles labeled transaction classes
+- Creates ML-ready datasets
 
-* Transaction velocity and frequency
-* Night-time transaction activity
-* High-volume amount indicators
-* Transaction deviation patterns
-* Network connectivity and hub behavior
+### 2. Behavioral Feature Engineering
 
-### 2. Dual-Engine Machine Learning Models
+The system extracts transaction behavior signals:
 
-* **Isolation Forest (Unsupervised):** Discovers unusual transaction patterns and detects novel, unknown fraud behaviors (zero-day anomalies).
-* **Random Forest Classifier (Supervised):** Learns from labeled historical Bitcoin transactions to generate highly accurate fraud probability scores.
+- Transaction velocity
+- Night transaction activity
+- High amount indicators
+- Transaction deviation patterns
+- Network connectivity behavior
 
-### 3. Graph-Based Transaction Intelligence
+These features help identify abnormal financial activity.
 
-Since cryptocurrency transactions form complex networks, CryptoGuard AI leverages **NetworkX** to analyze Nodes, Edges, Degree, and Centrality. This helps identify suspicious clusters, highly connected illicit wallets, and abnormal fund flows.
+### 3. Machine Learning Models
 
-### 4. Risk Fusion Engine
+#### Isolation Forest
 
-Multiple signals are mathematically fused into a single, actionable risk score:
+Used for:
 
-> **Final Risk Score Formula:**
-> `40% ML Fraud Probability` + `30% Anomaly Score` + `20% Graph Risk` + `10% Rule-Based Indicators`
+- Unsupervised anomaly detection
+- Discovering unusual transaction patterns
+- Detecting unknown fraud behaviors
 
-### 5. Explainable AI (XAI) Alerts
+#### Random Forest Classifier
 
-The system does not act as a black box. Every flagged transaction includes an exact breakdown of *why* it was flagged, crucial for compliance and investigation.
+Used for:
 
-**Example Output:**
+- Supervised fraud prediction
+- Learning from labeled Bitcoin transactions
+- Generating fraud probability scores
 
-> **Transaction ID:** TX12345
-> **Risk Score:** 91/100 🔴 **HIGH RISK** | **Priority:** URGENT
-> **Flagged Reasons:**
-> ✓ High transaction amount anomaly
-> ✓ Night transaction activity detected
-> ✓ Suspicious network connection proximity
+### 4. Graph-Based Transaction Intelligence
+
+Crypto transactions form networks.
+
+CryptoGuard AI analyzes:
+
+- Nodes
+- Edges
+- Degree
+- Centrality
+- Transaction connections
+
+Graph analysis helps identify:
+
+- Suspicious clusters
+- Highly connected wallets
+- Abnormal transaction networks
+
+### 5. Risk Fusion Engine
+
+Multiple signals are combined:
+
+```
+Final Risk Score =
+40% ML Fraud Probability
+30% Anomaly Detection Score
+20% Graph Risk
+10% Rule Based Indicators
+```
+
+Output:
+
+```
+Risk Score: 91/100
+Risk Level: HIGH
+Priority: URGENT
+```
+
+### 6. Explainable Fraud Detection
+
+The system does not only say:
+
+"Transaction is suspicious"
+
+It explains:
+
+Example:
+
+```
+Transaction ID:
+TX12345
+
+Risk Score:
+91/100
+
+Risk Level:
+HIGH
+
+Reasons:
+✓ High transaction amount
+✓ Night transaction activity
+✓ Suspicious network connection
+
+Priority:
+URGENT
+```
+
+### 7. Investigation Dashboard
+
+Built using Streamlit.
+
+Dashboard provides:
+
+- Transaction monitoring
+- Risk distribution
+- Suspicious transaction queue
+- Network visualization
+- Explainable alerts
 
 ---
 
-## 💻 Investigation Dashboard
+## Dataset
 
-Built with Streamlit, the dashboard provides a centralized view for compliance officers, featuring real-time transaction monitoring, risk distribution analytics, a prioritized suspicious transaction queue, and network graph visualizations.
+### Elliptic Bitcoin Transaction Dataset
 
----
+Source:
 
-## 📊 Dataset & Model Evaluation
+Elliptic Bitcoin transaction dataset containing:
 
-* **Dataset:** Elliptic Bitcoin Transaction Dataset (contains transaction features, classes, and graph relationships mapping legitimate, illicit, and unknown nodes).
-* **Evaluation Metrics:** Precision, Recall, F1-Score, and Confusion Matrix.
-* *Note: The model is heavily optimized for **Recall** and **F1-Score**, as missing a suspicious transaction (False Negative) carries a higher regulatory and financial cost than a False Positive.*
+- Transaction features
+- Transaction classes
+- Transaction graph relationships
 
----
+Dataset contains:
 
-## 🛠️ Technology Stack
-
-| Category | Technologies Used |
-| --- | --- |
-| **Programming** | Python 3.10+ |
-| **Data Processing** | Pandas, NumPy |
-| **Machine Learning** | Scikit-learn (Random Forest, Isolation Forest) |
-| **Graph Analytics** | NetworkX |
-| **Visualization & UI** | Streamlit, Plotly, Matplotlib |
-| **Version Control** | Git, GitHub |
+- Legitimate transactions
+- Illicit transactions
+- Unknown transactions
 
 ---
 
-## 📁 Project Structure
+## Technology Stack
 
-```text
+### Programming
+
+Python
+
+### Data Processing
+
+- Pandas
+- NumPy
+
+### Machine Learning
+
+- Scikit-learn
+- Random Forest
+- Isolation Forest
+
+### Graph Analysis
+
+- NetworkX
+
+### Visualization
+
+- Matplotlib
+- Plotly
+- Streamlit
+
+### Development
+
+- Git
+- GitHub
+- Jupyter Notebook
+
+---
+
+## Project Structure
+
+```
 CryptoGuard-AI-AML-Detection
 │
-├── data/
-│   ├── raw/
-│   └── processed/
-├── notebooks/
-├── src/
+├── data
+│   ├── raw
+│   └── processed
+│
+├── notebooks
+│
+├── src
 │   ├── feature_engineering.py
 │   ├── fraud_model.py
 │   ├── supervised_model.py
 │   ├── graph_analysis.py
 │   ├── risk_engine.py
 │   └── final_risk_engine.py
-├── models/
+│
+├── models
 │   └── random_forest_fraud_model.pkl
-├── dashboard/
+│
+├── dashboard
 │   └── app.py
-├── docs/
-│   └── screenshots/
+│
+├── docs
+│
 ├── requirements.txt
+│
 └── README.md
-
 ```
 
 ---
 
-## 🚀 Installation & Usage
+## Model Evaluation
 
-**1. Clone the repository and install dependencies:**
+The project evaluates models using:
+
+- Precision
+- Recall
+- F1 Score
+- Confusion Matrix
+
+Fraud detection focuses on recall and F1-score because missing suspicious transactions is costly in financial systems.
+
+---
+
+## Running the Project
+
+### Install Dependencies
 
 ```bash
-git clone [https://github.com/Rauof-Qadir/CryptoGuard-AI-AML-Detection.git](https://github.com/Rauof-Qadir/CryptoGuard-AI-AML-Detection.git)
-cd CryptoGuard-AI-AML-Detection
 pip install -r requirements.txt
-
 ```
 
-**2. Launch the Streamlit Dashboard:**
+### Run Dashboard
 
 ```bash
 streamlit run dashboard/app.py
-
 ```
 
-*The dashboard will automatically open in your browser at `http://localhost:8501`.*
+Dashboard opens:
 
 ```
-
+http://localhost:8501
 ```
+
+---
+
+## License
+
+This project is licensed under the MIT License.
