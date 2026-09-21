@@ -100,7 +100,10 @@ Elliptic Bitcoin Transaction Dataset
 # Demo Dashboard
 
 
-![Dashboard](docs/screenshots/dashboard.png)
+![Dashboard](docs/screenshots/dashboard1.png)
+![Dashboard](docs/screenshots/dashboard2.png)
+![Dashboard](docs/screenshots/dashboard3.png)
+
 
 
 
