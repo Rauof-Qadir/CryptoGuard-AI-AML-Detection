@@ -1,6 +1,5 @@
 # 🛡️ CryptoGuard AI
-
-## Crypto Fraud & Anti-Money Laundering (AML) Detection Engine
+# Crypto Fraud & Anti-Money Laundering (AML) Detection Engine
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--Learn-orange)
@@ -11,15 +10,12 @@
 ![Status](https://img.shields.io/badge/Project-Completed-success)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
----
-
 ## Overview
 
 CryptoGuard AI is an end-to-end Machine Learning based cryptocurrency fraud and Anti-Money Laundering (AML) detection system.
 
 The project analyzes Bitcoin transaction behavior, detects suspicious activities, generates risk scores, explains why transactions are flagged, and provides an investigation dashboard similar to real-world financial monitoring systems used by exchanges and financial institutions.
 
----
 
 ## Project Objective
 
@@ -33,55 +29,74 @@ CryptoGuard AI aims to identify suspicious transaction patterns using:
 - Graph Network Intelligence
 - Explainable Risk Scoring
 
----
 
-![Dashboard View](docs/screenshots/dashboard1.png)
-![Dashboard View](docs/screenshots/dashboard2.png)
-![Dashboard View](docs/screenshots/dashboard3.png)
-![Dashboard View](docs/screenshots/dashboard4.png)
+
 
 ---
 
-## System Architecture
+ ![Dashboard View](docs/screenshots/dashboard1.png)
+ ![Dashboard View](docs/screenshots/dashboard2.png)
+ ![Dashboard View](docs/screenshots/dashboard3.png)
+ ![Dashboard View](docs/screenshots/dashboard4.png)
 
-```
+# System Architecture
+
 Bitcoin Transactions
-        ↓
+
+    ↓
+
 Data Processing
-        ↓
+
+           ↓
+
 Feature Engineering
-        ↓
+
+           ↓
+
 ┌───────────────────────┐
-│                       │
-↓                       ↓
-Isolation Forest        Random Forest
-Anomaly Detection       Fraud Classification
-│                       │
+│          │
+           ↓
+
+Isolation Forest Random Forest
+Anomaly Detection Fraud Classification
+
+│          │
 └──────────┬────────────┘
-           ↓
-Graph Network Analysis
-           ↓
-Risk Fusion Engine
-           ↓
-Explainable AML Alerts
-           ↓
+
+        ↓
+
+ Graph Network Analysis
+
+        ↓
+
+  Risk Fusion Engine
+
+        ↓
+
+ Explainable AML Alerts
+
+        ↓
+
 Investigation Dashboard
-```
+
 
 ---
 
-## Key Features
+# Key Features
 
-### 1. Data Processing Pipeline
+
+## 1. Data Processing Pipeline
 
 - Loads real-world Bitcoin transaction data
 - Cleans and prepares transaction features
 - Handles labeled transaction classes
 - Creates ML-ready datasets
 
-### 2. Behavioral Feature Engineering
+
+## 2. Behavioral Feature Engineering
 
 The system extracts transaction behavior signals:
+
 
 - Transaction velocity
 - Night transaction activity
@@ -89,11 +104,16 @@ The system extracts transaction behavior signals:
 - Transaction deviation patterns
 - Network connectivity behavior
 
+
 These features help identify abnormal financial activity.
 
-### 3. Machine Learning Models
 
-#### Isolation Forest
+---
+
+## 3. Machine Learning Models
+
+
+### Isolation Forest
 
 Used for:
 
@@ -101,7 +121,8 @@ Used for:
 - Discovering unusual transaction patterns
 - Detecting unknown fraud behaviors
 
-#### Random Forest Classifier
+
+### Random Forest Classifier
 
 Used for:
 
@@ -109,7 +130,11 @@ Used for:
 - Learning from labeled Bitcoin transactions
 - Generating fraud probability scores
 
-### 4. Graph-Based Transaction Intelligence
+
+---
+
+# 4. Graph-Based Transaction Intelligence
+
 
 Crypto transactions form networks.
 
@@ -121,43 +146,63 @@ CryptoGuard AI analyzes:
 - Centrality
 - Transaction connections
 
+
 Graph analysis helps identify:
 
 - Suspicious clusters
 - Highly connected wallets
 - Abnormal transaction networks
 
-### 5. Risk Fusion Engine
+
+---
+
+# 5. Risk Fusion Engine
+
 
 Multiple signals are combined:
 
-```
+
+
+
 Final Risk Score =
+
 40% ML Fraud Probability
+
 30% Anomaly Detection Score
+
 20% Graph Risk
+
 10% Rule Based Indicators
-```
+
+
 
 Output:
 
-```
-Risk Score: 91/100
-Risk Level: HIGH
-Priority: URGENT
-```
 
-### 6. Explainable Fraud Detection
+Risk Score: 91/100
+
+Risk Level: HIGH
+
+Priority: URGENT
+
+
+
+---
+
+# 6. Explainable Fraud Detection
+
 
 The system does not only say:
 
 "Transaction is suspicious"
 
+
 It explains:
 
 Example:
 
-```
+
+
 Transaction ID:
 TX12345
 
@@ -168,19 +213,29 @@ Risk Level:
 HIGH
 
 Reasons:
+
 ✓ High transaction amount
+
 ✓ Night transaction activity
+
 ✓ Suspicious network connection
 
 Priority:
-URGENT
-```
 
-### 7. Investigation Dashboard
+URGENT
+
+
+
+---
+
+# 7. Investigation Dashboard
+
 
 Built using Streamlit.
 
+
 Dashboard provides:
+
 
 - Transaction monitoring
 - Risk distribution
@@ -188,11 +243,14 @@ Dashboard provides:
 - Network visualization
 - Explainable alerts
 
+
 ---
 
-## Dataset
+# Dataset
 
-### Elliptic Bitcoin Transaction Dataset
+
+## Elliptic Bitcoin Transaction Dataset
+
 
 Source:
 
@@ -202,118 +260,123 @@ Elliptic Bitcoin transaction dataset containing:
 - Transaction classes
 - Transaction graph relationships
 
+
 Dataset contains:
 
 - Legitimate transactions
 - Illicit transactions
 - Unknown transactions
 
+
 ---
 
-## Technology Stack
+# Technology Stack
 
-### Programming
+
+## Programming
 
 Python
 
-### Data Processing
+
+## Data Processing
 
 - Pandas
 - NumPy
 
-### Machine Learning
+
+## Machine Learning
 
 - Scikit-learn
 - Random Forest
 - Isolation Forest
 
-### Graph Analysis
+
+## Graph Analysis
 
 - NetworkX
 
-### Visualization
+
+## Visualization
 
 - Matplotlib
 - Plotly
 - Streamlit
 
-### Development
+
+## Development
 
 - Git
 - GitHub
 - Jupyter Notebook
 
+
 ---
 
-## Project Structure
+# Project Structure
 
-```
+
+
 CryptoGuard-AI-AML-Detection
+
 │
 ├── data
-│   ├── raw
-│   └── processed
+│ ├── raw
+│ └── processed
 │
 ├── notebooks
 │
 ├── src
-│   ├── feature_engineering.py
-│   ├── fraud_model.py
-│   ├── supervised_model.py
-│   ├── graph_analysis.py
-│   ├── risk_engine.py
-│   └── final_risk_engine.py
+│ ├── feature_engineering.py
+│ ├── fraud_model.py
+│ ├── supervised_model.py
+│ ├── graph_analysis.py
+│ ├── risk_engine.py
+│ └── final_risk_engine.py
 │
 ├── models
-│   └── random_forest_fraud_model.pkl
+│ └── random_forest_fraud_model.pkl
 │
 ├── dashboard
-│   └── app.py
+│ └── app.py
 │
 ├── docs
 │
 ├── requirements.txt
 │
 └── README.md
-```
+
+
 
 ---
 
-## Model Evaluation
+# Model Evaluation
+
 
 The project evaluates models using:
+
 
 - Precision
 - Recall
 - F1 Score
 - Confusion Matrix
 
+
 Fraud detection focuses on recall and F1-score because missing suspicious transactions is costly in financial systems.
+
 
 ---
 
-## Running the Project
+# Running the Project
 
-### Install Dependencies
+
+## Install Dependencies
+
 
 ```bash
 pip install -r requirements.txt
-```
-
-### Run Dashboard
-
-```bash
+Run Dashboard
 streamlit run dashboard/app.py
-```
 
 Dashboard opens:
 
-```
 http://localhost:8501
-```
-
----
-
-## License
-
-This project is licensed under the MIT License.
